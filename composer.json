@@ -2,6 +2,7 @@
     "name" : "am-micro/client",
     "description" : "Client Bundle for microservice architecture",
     "type" : "symfony-bundle",
+    "license": "MIT",
     "authors" : [{
         "name" : "Alexandre Martinez",
         "email" : "alexandre.martinez76@gmail.com"
