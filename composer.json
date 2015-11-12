@@ -1,5 +1,5 @@
 {
-    "name" : "micro/client",
+    "name" : "am-micro/client",
     "description" : "Client Bundle for microservice architecture",
     "type" : "symfony-bundle",
     "authors" : [{
