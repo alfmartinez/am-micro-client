@@ -15,9 +15,8 @@
             "nategood/httpful": "^0.2.20"
     },
     "autoload" : {
-        "psr-0" : {
+        "psr-4" : {
             "Micro\\ClientBundle" : ""
         }
-    },
-    "target-dir" : "Micro/ClientBundle"
+    }
 }
