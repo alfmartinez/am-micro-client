@@ -1,0 +1,23 @@
+{
+    "name" : "micro/client",
+    "description" : "Client Bundle for microservice architecture",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Alexandre Martinez",
+        "email" : "alexandre.martinez76@gmail.com"
+    }],
+    "keywords" : [
+        "client microservice micro"
+    ],
+    "require" : {
+            "php" : ">=5.5.0",
+            "symfony/symfony": "2.7.*",
+            "nategood/httpful": "^0.2.20"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Micro\\ClientBundle" : ""
+        }
+    },
+    "target-dir" : "Micro/ClientBundle"
+}
