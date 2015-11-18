@@ -29,6 +29,15 @@ class ClientTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @test
+     * @expectedException Exception
+     * @expectedExceptionMessage Unsupported method baz
+     */
+    public function throwsOnUnknownMethod() {
+        $this->client->callRestfulApi('baz', '');
+    }
+    
+    /**
+     * @test
      */
     public function getSendsGetRequestWithNoParams() {
         $this->request

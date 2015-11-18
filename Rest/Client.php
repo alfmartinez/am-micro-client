@@ -28,7 +28,7 @@ class Client {
                 $request = Request::get($uri);
                 break;
             default:
-                throw new Exception("Unsupported method $method");
+                throw new \Exception("Unsupported method $method");
         }
         $response = $request->send();
         return $response->body;
