@@ -22,6 +22,9 @@ class Client {
                 $request = Request::put($uri, $data);
                 break;
             case "GET":
+                if ($data) {
+                    $uri.='?'.http_build_query($data);
+                }
                 $request = Request::get($uri);
                 break;
             default:
