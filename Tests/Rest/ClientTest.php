@@ -95,4 +95,27 @@ class ClientTest extends PHPUnit_Framework_TestCase {
         $actual = $this->client->callRestfulApi('GET', 'foo/bar',array('test'=>'baz','rem'=>'boo'));
         $this->assertEquals('OK',$actual);
     }
+    
+    /**
+     * @test
+     * @dataProvider dataMethods
+     */
+    public function dataMethodsSendsProperRequestWithData($method, $expectedMethod) {
+        $this->request
+                ->shouldReceive($expectedMethod)
+                ->with('http://test.example.com/foo/bar', '{"test":"boo"}')
+                ->andReturnSelf();
+        $this->request
+                ->shouldReceive('send')
+                ->andReturn((object)['body'=>'OK']);
+        $actual = $this->client->callRestfulApi($method, 'foo/bar', json_encode(['test'=>'boo']));
+        $this->assertEquals('OK',$actual);
+    }
+    
+    public function dataMethods() {
+        return [
+            'put' => ['PUT','put'],
+            'post' => ['POST','post'],
+        ];
+    }
 }
